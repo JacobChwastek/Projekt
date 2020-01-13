@@ -7,7 +7,11 @@
 ## Install
 
 ```sh
+/Projekt/ClientApp
 npm install
+
+/Projekt/
+dotnet run  or run button in your ide
 ```
 
 ## Author
