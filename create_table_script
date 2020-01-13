@@ -1,5 +1,0 @@
-/*INSERT INTO expenses (name, value)
-VALUES
-("czynsz",2000);*/
-
-Select * from expenses;
