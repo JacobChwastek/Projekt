@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e5a8e1e7-8f5b-4d09-ba56-ee39bc23b7df" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/ClientApp/src/components/ListItem.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ClientApp/src/components/Sum.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ClientApp/src/components/ExpensesStyle.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projekt.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projekt.dir/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Projekt.dir/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projekt.dir/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Projekt.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Projekt.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ClientApp/src/components/ExpensesSection.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/components/ExpensesSection.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/src/components/ListItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/components/ListItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/src/components/Sum.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/components/Sum.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientApp/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/ClientApp/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controllers/ExpensesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Controllers/ExpensesController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Projekt.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Projekt.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/expensesDb" beforeDir="false" afterPath="$PROJECT_DIR$/expensesDb" afterDir="false" />
@@ -22,13 +26,13 @@
     <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Controllers/ExpensesController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Context/MyDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Controllers/WeatherForecastController.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Startup.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/WeatherForecast.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Startup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Context/MyDbContext.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Context/Expense.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Controllers/ExpensesController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -36,15 +40,18 @@
         <option value="$PROJECT_DIR$/ClientApp/src/components/Layout.js" />
         <option value="$PROJECT_DIR$/Properties/launchSettings.json" />
         <option value="$PROJECT_DIR$/ClientApp/src/App.js" />
-        <option value="$PROJECT_DIR$/ClientApp/src/components/Home.js" />
         <option value="$PROJECT_DIR$/Startup.cs" />
         <option value="$PROJECT_DIR$/Context/MyDbContext.cs" />
         <option value="$PROJECT_DIR$/Context/Expense.cs" />
         <option value="$PROJECT_DIR$/ClientApp/src/components/Expense.js" />
-        <option value="$PROJECT_DIR$/Controllers/ExpensesController.cs" />
+        <option value="$PROJECT_DIR$/ClientApp/src/components/ExpensesStyle.js" />
+        <option value="$PROJECT_DIR$/ClientApp/src/components/Home.js" />
+        <option value="$PROJECT_DIR$/ClientApp/src/components/Sum.js" />
+        <option value="$PROJECT_DIR$/ClientApp/src/index.js" />
+        <option value="$PROJECT_DIR$/ClientApp/src/components/DeleteDialog.js" />
         <option value="$PROJECT_DIR$/ClientApp/src/components/ListItem.js" />
         <option value="$PROJECT_DIR$/ClientApp/src/components/ExpensesSection.js" />
-        <option value="$PROJECT_DIR$/ClientApp/src/components/Sum.js" />
+        <option value="$PROJECT_DIR$/Controllers/ExpensesController.cs" />
       </list>
     </option>
   </component>
@@ -69,6 +76,19 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="ts.external.directory.path" value="C:\Users\chwas\Desktop\Projekt\ClientApp\node_modules\typescript\lib" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager" selected=".NET Launch Settings Profile.Projekt">
     <configuration name="Projekt" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
@@ -101,18 +121,6 @@
         <option name="Build" enabled="true" />
       </method>
     </configuration>
-  </component>
-  <component name="ServiceViewManager">
-    <option name="viewStates">
-      <list>
-        <serviceView>
-          <treeState>
-            <expand />
-            <select />
-          </treeState>
-        </serviceView>
-      </list>
-    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />

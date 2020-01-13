@@ -4,39 +4,16 @@ import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import {List} from "@material-ui/core";   
 import ListItem from "./ListItem";
 import Sum from "./Sum";
-
-const formStyle={
-    display:"flex",
-    flexDirection:"column",
-    justifyContent:"space-between",
-    height:150
-   
-};
-const gridContainerStyle ={
-  display:"flex",
-  flexDirection: "row",
-  justifyContent: "space-evenly"  
-};
-const paperStyle = {
-    padding:20,
-    margin: 10,
-    width:400
-   
-};
-
+import  {formStyle,gridContainerStyle,paperStyle,displayMessageStyle,submitButtonStyle} from "./ExpensesStyle";
 
 export default function ExpensesSection () {
     
     useEffect( (event) => {
 
 
-          const result =  axios.get("https://localhost:5001/expenses").then( t=>setData(t.data));
-         
-
-
+            axios.get("https://localhost:5001/expenses").then( t=>setData(t.data));
 
     },[]);
   
@@ -44,18 +21,23 @@ export default function ExpensesSection () {
     const handleSubmit = event => {
         event.preventDefault();
             
-        let data = {id:0,name:name,value:parseInt(value)};
+        const newName = name === "" ? `Wydatek` : name; 
+        let data = {id:0,name:newName,value:parseFloat(value)};
         
         console.log({data});
 
-        axios.post("https://localhost:5001/expenses", data )
-            .then(res => {
-                
-                console.log(res);
-                console.log(res.data);
-            })
-            .catch(e=> console.log(e));
-        window.location.reload();
+        if (isValid)
+        {
+            axios.post("https://localhost:5001/expenses", data )
+                .then(res => {
+
+                    console.log(res);
+                    console.log(res.data);
+                })
+                .catch(e=> console.log(e));
+            window.location.reload();
+        }
+       
      
     };  
    
@@ -64,6 +46,13 @@ export default function ExpensesSection () {
         setName(e.target.value);
     };
     const handleValueChange = (e) =>{
+        if (isNaN(parseInt(e.target.value))){
+            setValid(false);
+        }
+        else{
+            setValid(true);
+        }
+      
         setValue((e.target.value));
     };
 
@@ -73,34 +62,42 @@ export default function ExpensesSection () {
     const [name,setName] = useState("");
     const [value,setValue] = useState(0);
     const sum = Sum(data);
+    const [isValid, setValid] = useState(true);
 
+
+   
+    const displayContent = 
+        (data.map((e) =>
+            
+                <ListItem key={e.id} item={e}/>
+                ));
     
-    const ee = data.map((e) => 
-       
-            <div>
-                <ListItem key={e.id} item={e}    />
-                
-            </div>
-     
-        );
-    
+    const displayMessage = () =>
+        isValid === false ?
+            (<>Podana wartość musi być liczbą! </>) : (<></>)
+    ;
     return(
         <>
             <Grid container spacing={3} style={gridContainerStyle}>
                 <Grid item>
                     <Paper style={paperStyle}>
-                        <h5>Dodaj wydatek</h5>
+                        <div className="Title">
+                            <h5>Dodaj wydatek</h5>
+                        </div>
                         <form  style={formStyle}>
                             <TextField variant="standard" label="Nazwa" value={name} onChange={handleNameChange}/>
-                            <TextField variant="standard" label="Kwota"  value={value} onChange={handleValueChange} />
-                            <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>Dodaj wydatek</Button>
+                            <TextField  variant="standard" label="Kwota"  value={value} onChange={handleValueChange} />
+                            <Button style={submitButtonStyle} type="submit" variant="contained" color="primary" onClick={handleSubmit}>Dodaj wydatek</Button>
+                            <div  style={displayMessageStyle}>{displayMessage()}</div>
                         </form>
                     </Paper>
                 </Grid>
                 <Grid item>
                     <Paper style={paperStyle}>
                         <h5>Lista wydatkow</h5>
-                        {ee}
+                  
+                            {displayContent}
+               
                         Suma : {sum}
                     </Paper>
                 </Grid>
