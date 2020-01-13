@@ -10,10 +10,14 @@
 /Projekt/ClientApp
 npm install
 
-/Projekt/
-dotnet run  or run button in your ide
-```
 
+```
+## Run 
+```sh
+/Projekt/
+dotnet run 
+Run button in IDE
+````
 ## Author
 
 👤 **JacobChwastek**
