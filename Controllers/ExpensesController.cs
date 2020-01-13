@@ -44,7 +44,7 @@ namespace Projekt.Controllers
             var context = _context.Add(expense);
             _context.SaveChanges();
             
-            return Ok("aa");
+            return Ok(expense);
         }
 
         [HttpDelete]

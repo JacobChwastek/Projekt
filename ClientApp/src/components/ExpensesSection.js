@@ -3,7 +3,10 @@ import axios from "axios";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
-import Button from "@material-ui/core/Button";   
+import Button from "@material-ui/core/Button";
+import {List} from "@material-ui/core";   
+import ListItem from "./ListItem";
+import Sum from "./Sum";
 
 const formStyle={
     display:"flex",
@@ -20,52 +23,66 @@ const gridContainerStyle ={
 const paperStyle = {
     padding:20,
     margin: 10,
+    width:400
    
 };
 
 
-
 export default function ExpensesSection () {
     
-    useEffect( () => {
-        
-        
-                 axios.get("https://localhost:5001/expenses")
-                     .then( t=> setData(t.data));
-                     
+    useEffect( (event) => {
 
-             
-    });
-    
+
+          const result =  axios.get("https://localhost:5001/expenses").then( t=>setData(t.data));
+         
+
+
+
+    },[]);
+  
+
     const handleSubmit = event => {
         event.preventDefault();
             
-        let data = [{id:0,name:name,value:value}];
+        let data = {id:0,name:name,value:parseInt(value)};
         
-     
-       
-        axios.post("https://localhost:5001/expenses",  data )
+        console.log({data});
+
+        axios.post("https://localhost:5001/expenses", data )
             .then(res => {
-                console.log(data);
+                
                 console.log(res);
                 console.log(res.data);
-            });
-    };
+            })
+            .catch(e=> console.log(e));
+        window.location.reload();
+     
+    };  
+   
     
     const handleNameChange = (e) =>{
         setName(e.target.value);
     };
     const handleValueChange = (e) =>{
-        setValue(e.target.value);
+        setValue((e.target.value));
     };
+
    
     
     const [data,setData] = useState([{id:0,name:"",value:0}]);
     const [name,setName] = useState("");
     const [value,setValue] = useState(0);
+    const sum = Sum(data);
+
     
-        
-    const ee = data.map((e) => <li key={e.id}> {e.value} {e.name} </li> );
+    const ee = data.map((e) => 
+       
+            <div>
+                <ListItem key={e.id} item={e}    />
+                
+            </div>
+     
+        );
     
     return(
         <>
@@ -75,7 +92,7 @@ export default function ExpensesSection () {
                         <h5>Dodaj wydatek</h5>
                         <form  style={formStyle}>
                             <TextField variant="standard" label="Nazwa" value={name} onChange={handleNameChange}/>
-                            <TextField variant="standard" label="Kwota" value={value} onChange={handleValueChange} />
+                            <TextField variant="standard" label="Kwota"  value={value} onChange={handleValueChange} />
                             <Button type="submit" variant="contained" color="primary" onClick={handleSubmit}>Dodaj wydatek</Button>
                         </form>
                     </Paper>
@@ -84,7 +101,7 @@ export default function ExpensesSection () {
                     <Paper style={paperStyle}>
                         <h5>Lista wydatkow</h5>
                         {ee}
-                        
+                        Suma : {sum}
                     </Paper>
                 </Grid>
             </Grid>

@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\chwas\.Rider2019.2\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\chwas\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_.19.00" t="ExcludeRecursive" />
-    <e p="C:\Users\chwas\Desktop\Projekt" t="IncludeRecursive">
+    <e p="C:\Users\jacob\.Rider2019.3\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\jacob\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+    <e p="C:\Users\jacob\Desktop\B\Projekt" t="IncludeRecursive">
       <e p=".gitignore" t="Include" />
       <e p="appsettings.Development.json" t="Include" />
       <e p="appsettings.json" t="Include" />
@@ -104,7 +104,9 @@
             <e p="ExpensesSection.js" t="Include" />
             <e p="Home.js" t="Include" />
             <e p="Layout.js" t="Include" />
+            <e p="ListItem.js" t="Include" />
             <e p="NavMenu.css" t="Include" />
+            <e p="Sum.js" t="Include" />
           </e>
           <e p="custom.css" t="Include" />
           <e p="index.js" t="Include" />
@@ -130,6 +132,7 @@
         <e p="Debug" t="Include">
           <e p="netcoreapp3.0" t="Include">
             <e p="Projekt.AssemblyInfo.cs" t="Include" />
+            <e p="Projekt.RazorAssemblyInfo.cs" t="Include" />
           </e>
         </e>
       </e>
