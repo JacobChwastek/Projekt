@@ -11,10 +11,7 @@ import  {formStyle,gridContainerStyle,paperStyle,displayMessageStyle,submitButto
 export default function ExpensesSection () {
     
     useEffect( (event) => {
-
-
             axios.get("https://localhost:5001/expenses").then( t=>setData(t.data));
-
     },[]);
   
 

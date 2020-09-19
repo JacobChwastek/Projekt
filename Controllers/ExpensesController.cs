@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Projekt.Context;
@@ -18,9 +19,7 @@ namespace Projekt.Controllers
             _logger = logger;
             _context = context;
         }
-
         
-   
         [HttpGet]
         public IActionResult Get()
         {
@@ -30,31 +29,49 @@ namespace Projekt.Controllers
         } 
    
         [HttpGet("{id}")]
-        public IActionResult Get(int id)
+        public IActionResult Get(string id)
         {
-            var data = _context.Expenses.Where(e => e.Id == id);
+            var data = _context.Expenses.Where(e => e.Id.Equals(id));
             
             return Ok(data);
         }
    
         [HttpPost]
-        public IActionResult Post(Expense expense)
+        public IActionResult Post(ExpenseViewModel expense)
         {
-            var newData = expense;
-            var context = _context.Add(expense);
+            var newExpense = new Expense()
+            {
+                Id = Guid.NewGuid().ToString(),
+                Name = expense.Name,
+                Value = expense.Value
+            };
+            
+            _context.Add(newExpense);
             _context.SaveChanges();
             
             return Ok(expense);
         }
 
-        [HttpDelete]
-        public IActionResult Delete(int id)
+        [HttpDelete("{id}")]
+        public IActionResult Delete(string id)
         {
-            var data = _context.Expenses.Where(e => e.Id == id);
-            _context.Expenses.Remove(data.First());
+
+            var expense = _context.Expenses.FirstOrDefault(e => e.Id.Equals(id));
+
+            if (expense is null)
+                return NotFound();
+
+            _context.Expenses.Remove(expense);
             _context.SaveChanges();
-            return Ok(data);
+            
+            return Ok();
         }
+    }
+
+    public class ExpenseViewModel
+    {
+        public string Name { get; set; }
         
+        public double  Value { get; set; }
     }
 }
