@@ -7,7 +7,6 @@
   
 </p>
 
-> App which allows its user to aggregate his expenses. Backend : ASP.Net Core Api Version: 3.0.100. Frontend: React. Database: sqlite
 
 ## Install
 
