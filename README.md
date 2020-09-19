@@ -1,7 +1,10 @@
 <h1 align="center">Welcome to Expenses Project 👋</h1>
 <p>
+  
   Gąłaź master - Wersja projektu jako projekt rekrutacyjny
+  
   Gałąź code_reviuew - Wersja projektu przepisana posiadając już 7 miesięczny staż pracy 
+  
 </p>
 
 > App which allows its user to aggregate his expenses. Backend : ASP.Net Core Api Version: 3.0.100. Frontend: React. Database: sqlite
