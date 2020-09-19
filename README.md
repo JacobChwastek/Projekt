@@ -3,7 +3,7 @@
   
   Gąłaź master - Wersja projektu jako projekt rekrutacyjny
   
-  Gałąź code_reviuew - Wersja projektu przepisana posiadając już 7 miesięczny staż pracy 
+  Gałąź code_review - Wersja projektu przepisana posiadając już 7 miesięczny staż pracy 
   
 </p>
 
